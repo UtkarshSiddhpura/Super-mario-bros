@@ -2,7 +2,16 @@
 // Starts everything.
 
 function FullScreenMario() {
-  document.body.webkitRequestFullscreen().catch(err => {});
+   let element = document.body;
+   let requestMethod = element.requestFullScreen ||
+              element.webkitRequestFullscreen ||
+              element.webkitRequestFullScreen ||
+              element.mozRequestFullScreen ||
+              element.msRequestFullscreen;
+
+    if( requestMethod ) {
+      requestMethod.apply( element );
+    }
   var time_start = Date.now();
   
   // Thanks, Obama...
