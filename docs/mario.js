@@ -108,9 +108,9 @@ function getGameScreen() {
   
   // This is the bottom of the screen - water, pipes, etc. go until here
   window.botmax = this.height - ceilmax +10;
-  if(botmax < unitsize) {
+  /*if(botmax < unitsize) {
     body.innerHTML = "<div><br>Your screen isn't high enough. Make it taller, then refresh.</div>";
-  }
+  }*/
   
   // The distance at which Things die from falling
   this.deathheight = this.bottom + 48;
