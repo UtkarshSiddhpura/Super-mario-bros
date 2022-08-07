@@ -6,8 +6,12 @@
 
 		<link href="mario.css" rel="stylesheet" />
 		<link href="Fonts/stylesheet.css" rel="stylesheet" />
+
+		<script src="assets/jquery.min.js"></script>
+
 		<script src="data.js"></script>
 		<script src="editor.js"></script>
+		<script src="gamepad.js"></script>
 		<script src="events.js"></script>
 		<script src="generator.js"></script>
 		<script src="library.js"></script>
@@ -22,6 +26,103 @@
 		<script src="triggers.js"></script>
 		<script src="upkeep.js"></script>
 		<script src="utility.js"></script>
+
+		<script src="src/AudioPlayr.js"></script>
+		<script src="src/TimeHandlr.js"></script>
+		<script src="src/QuadsKeepr.js"></script>
+
+		<style>
+			#paused {
+				background: rgba(0, 0, 0, 0.3);
+				font-size: 24px;
+				text-transform: uppercase;
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				z-index: 999;
+				display: none;
+				align-items: center;
+				justify-content: center;
+				line-height: 1.5em;
+			}
+			#mobile-controls .move {
+				width: 42px;
+				height: 42px;
+				position: absolute;
+				z-index: 98;
+			}
+			#mobile-controls .move span {
+				width: 42px;
+				height: 42px;
+				background-color: #fff;
+				background-size: 100%;
+				color: #000;
+				font-weight: bold;
+				line-height: 32px;
+				text-align: center;
+				border-radius: 50%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+			}
+			#mobile-controls #move-left,
+			#mobile-controls #move-right {
+				top: 440px;
+				height: 80px;
+			}
+			#mobile-controls #move-left {
+				left: 10px;
+			}
+			#mobile-controls #move-left span {
+				background-image: url("./assets/img/arrow_left.png");
+			}
+			#mobile-controls #move-right {
+				left: 53px;
+				width: 57px;
+			}
+			#mobile-controls #move-right span {
+				background-image: url("./assets/img/arrow_right.png");
+			}
+			#mobile-controls #move-top,
+			#mobile-controls #move-bottom {
+				right: 10px;
+				width: 62px;
+			}
+			#mobile-controls #move-top {
+				top: 429px;
+			}
+			#mobile-controls #move-top span {
+				background-image: url("./assets/img/arrow_top.png");
+			}
+			#mobile-controls #move-bottom {
+				top: 477px;
+			}
+			#mobile-controls #move-bottom span {
+				background-image: url("./assets/img/arrow_bottom.png");
+			}
+			#mobile-controls #move-fire {
+				top: 454px;
+				right: 76px;
+			}
+			#mobile-controls #move-fire span {
+				background-image: url("./assets/img/fire.png");
+			}
+			#explanation {
+				display: none;
+			}
+		</style>
 	</head>
 	<body onload="FullScreenMario()"></body>
+	<div id="mobile-controls">
+		<div id="move-left" class="move"><span></span></div>
+		<div id="move-top" class="move"><span></span></div>
+		<div id="move-right" class="move"><span></span></div>
+		<div id="move-bottom" class="move"><span></span></div>
+		<div id="move-fire" class="move"><span></span></div>
+	</div>
 </html>
