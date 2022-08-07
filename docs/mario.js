@@ -107,7 +107,7 @@ function getGameScreen() {
   // this.middlex = (this.left + this.right) / 3;
   
   // This is the bottom of the screen - water, pipes, etc. go until here
-  window.botmax = this.height - ceilmax +10;
+  window.botmax = this.height - ceilmax;
   /*if(botmax < unitsize) {
     body.innerHTML = "<div><br>Your screen isn't high enough. Make it taller, then refresh.</div>";
   }*/
