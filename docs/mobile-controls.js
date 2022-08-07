@@ -12,19 +12,11 @@ const whichKeys = {
 }
 
 mobControls.forEach(control => {
-	control.btn.addEventListener("touchstart", (e) => {
-		e.preventDefault();
-		let keyEvent = new KeyboardEvent("keydown", {
-			which: whichKeys[control.type],
+	["touchstart", "touchend"].map(eventName => {
+		control.btn.addEventListener(eventName, (e) => {
+			const eventToTrig = eventName === "touchstart" ? keydown:keyup;
+			const event = { which: whichKeys[control.type], }
+			eventToTrig(event);
 		});
-		document.body.dispatchEvent(keyEvent);
-	});
-
-	control.btn.addEventListener("touchend", (e) => {
-		e.preventDefault();
-		let keyEvent = new KeyboardEvent("keyup", {
-			which: whichKeys[control.type],
-		});
-		document.body.dispatchEvent(keyEvent);
-	});
+	})
 });
